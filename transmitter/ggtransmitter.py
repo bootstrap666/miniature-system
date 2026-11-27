@@ -23,9 +23,6 @@ class GGWaveTransmitter:
             rate=self.sample_rate,
             output=True,
         )
-        params = ggwave.getDefaultParameters()
-        params["sampleRateInput"] = sample_rate
-        self._instance = ggwave.init(params)
 
     def send(
         self, 

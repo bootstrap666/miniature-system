@@ -12,7 +12,6 @@ class GGWaveReceiver:
     ):
         self._frames_per_buffer = frames_per_buffer
         self._pyaudio = pyaudio.PyAudio()
-        self._instance = ggwave.init()
         self._stream = self._pyaudio.open(
             format=pyaudio.paFloat32,
             channels=1,
