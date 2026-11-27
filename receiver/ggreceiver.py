@@ -20,6 +20,9 @@ class GGWaveReceiver:
             input=True,
             frames_per_buffer=self._frames_per_buffer,
         )
+        params = ggwave.getDefaultParameters()
+        params["sampleRateInput"] = sample_rate
+        self._instance = ggwave.init(params)
 
     def read_once(self) -> str | None:
         """Lê um bloco de áudio do microfone e tenta decodificar."""
